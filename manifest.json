@@ -1,0 +1,21 @@
+{
+    "name": "SkipTube",
+    "version": "0.1.0",
+    "description": "Setting timestamps to skip on videos on YouTube",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "action": {
+        "default_title": "SkipTube",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 1
+}
